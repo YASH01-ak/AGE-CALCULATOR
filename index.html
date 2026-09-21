@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AgeCalc - a private, fast and accurate age calculator.">
+    <meta name="robots" content="index, follow">
+    <title>AgeCalc | Smart Age Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">A</span>
+            <span>AgeCalc</span>
+        </div>
+        <div class="nav-text">Smart Age Calculator</div>
+    </header>
+
+    <main class="main-container">
+        <section class="hero-section">
+            <div class="hero-badge">ACCURATE <span>|</span> FAST <span>|</span> FREE</div>
+            <h1>Calculate Your <span>Exact Age</span></h1>
+            <p>Enter your date of birth and discover your exact age, next birthday, total days and more.</p>
+        </section>
+
+        <section class="calculator-card">
+            <div class="card-header">
+                <div>
+                    <h2>Age Calculator</h2>
+                    <p>Select your date of birth below</p>
+                </div>
+                <div class="calendar-icon" aria-hidden="true">DATE</div>
+            </div>
+
+            <form id="ageForm" autocomplete="off">
+                <div class="date-selection">
+                    <div class="date-field">
+                        <label for="birthDaySelect">Day</label>
+                        <select id="birthDaySelect" required aria-label="Birth day">
+                            <option value="">Day</option>
+                        </select>
+                    </div>
+
+                    <div class="date-field">
+                        <label for="birthMonthSelect">Month</label>
+                        <select id="birthMonthSelect" required aria-label="Birth month">
+                            <option value="">Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </div>
+
+                    <div class="date-field">
+                        <label for="birthYearSelect">Year</label>
+                        <select id="birthYearSelect" required aria-label="Birth year">
+                            <option value="">Year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="calculate-btn">
+                    <span>Calculate My Age</span>
+                    <span class="arrow" aria-hidden="true">-&gt;</span>
+                </button>
+                <p id="errorMessage" class="error-message" role="alert" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section id="resultSection" class="result-section" aria-live="polite">
+            <div class="result-title">
+                <span class="success-icon" aria-hidden="true">OK</span>
+                <div>
+                    <h2>Your Age</h2>
+                    <p>Based on today's date</p>
+                </div>
+            </div>
+
+            <div class="age-display">
+                <div class="age-number" id="ageYears">0</div>
+                <div class="age-label">Years Old</div>
+            </div>
+
+            <div class="age-breakdown">
+                <div class="result-box">
+                    <strong id="resultYears">0</strong>
+                    <span>Years</span>
+                </div>
+                <div class="result-box">
+                    <strong id="resultMonths">0</strong>
+                    <span>Months</span>
+                </div>
+                <div class="result-box">
+                    <strong id="resultDays">0</strong>
+                    <span>Days</span>
+                </div>
+            </div>
+
+            <div class="birthday-card">
+                <div class="birthday-icon" aria-hidden="true">BDAY</div>
+                <div class="birthday-info">
+                    <span>Next Birthday</span>
+                    <strong id="nextBirthday">-</strong>
+                    <small id="birthdayCountdown">-</small>
+                </div>
+            </div>
+
+            <div class="extra-stats">
+                <div class="stat">
+                    <span class="stat-icon">DAYS</span>
+                    <div>
+                        <strong id="totalDays">0</strong>
+                        <span>Total Days</span>
+                    </div>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">WEEK</span>
+                    <div>
+                        <strong id="totalWeeks">0</strong>
+                        <span>Total Weeks</span>
+                    </div>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">DAY</span>
+                    <div>
+                        <strong id="birthDay">-</strong>
+                        <span>Born On</span>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" id="resetButton" class="reset-btn">Calculate Again</button>
+        </section>
+
+        <section class="info-section">
+            <div class="info-card">
+                <div class="info-icon">01</div>
+                <h3>Instant Results</h3>
+                <p>Get your age calculated instantly without complicated steps.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">02</div>
+                <h3>Accurate Calculation</h3>
+                <p>Calculates your age using years, months and days.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">03</div>
+                <h3>Private &amp; Secure</h3>
+                <p>Your date of birth stays inside your browser and is not uploaded.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Copyright &copy; 2026 Yash | AgeCalc</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

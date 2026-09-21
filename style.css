@@ -1,0 +1,547 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #06070c;
+    --bg-soft: #0b0d14;
+    --card: rgba(16, 18, 28, 0.94);
+    --card-2: #0d1018;
+    --border: rgba(255, 255, 255, 0.09);
+    --border-strong: rgba(168, 85, 247, 0.28);
+    --text: #f7f7fb;
+    --muted: #9da1b1;
+    --accent: #a855f7;
+    --accent-2: #7c3aed;
+    --pink: #d946ef;
+    --success: #22c55e;
+    --danger: #fb7185;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background:
+        radial-gradient(circle at 50% -15%, rgba(168, 85, 247, 0.18), transparent 38%),
+        radial-gradient(circle at 90% 35%, rgba(217, 70, 239, 0.05), transparent 28%),
+        var(--bg);
+    overflow-x: hidden;
+}
+
+button,
+select {
+    font: inherit;
+}
+
+.navbar {
+    width: 100%;
+    min-height: 70px;
+    padding: 15px clamp(20px, 6vw, 80px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(6, 7, 12, 0.88);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: linear-gradient(135deg, var(--accent), var(--pink));
+    box-shadow: 0 0 22px rgba(168, 85, 247, 0.30);
+}
+
+.nav-text {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.main-container {
+    width: min(92%, 1080px);
+    margin: 0 auto;
+}
+
+.hero-section {
+    padding: clamp(55px, 8vw, 82px) 15px 42px;
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 7px 15px;
+    border: 1px solid rgba(168, 85, 247, 0.28);
+    border-radius: 999px;
+    color: #d8a8ff;
+    background: rgba(168, 85, 247, 0.07);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    margin-bottom: 20px;
+}
+
+.hero-badge span {
+    opacity: 0.45;
+    margin: 0 3px;
+}
+
+.hero-section h1 {
+    font-size: clamp(40px, 7vw, 70px);
+    line-height: 1.04;
+    letter-spacing: -2.5px;
+    margin-bottom: 18px;
+}
+
+.hero-section h1 span {
+    display: block;
+    background: linear-gradient(90deg, #e3c4ff, #b55df5, #e879f9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-section p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.calculator-card,
+.result-section {
+    width: 100%;
+    background: linear-gradient(145deg, rgba(19, 21, 32, 0.97), rgba(10, 12, 19, 0.97));
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.30), 0 0 45px rgba(168, 85, 247, 0.055);
+}
+
+.calculator-card {
+    max-width: 720px;
+    margin: 0 auto 34px;
+    padding: clamp(22px, 4vw, 32px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.card-header h2 {
+    font-size: 24px;
+    margin-bottom: 3px;
+}
+
+.card-header p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.calendar-icon {
+    flex: 0 0 58px;
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    background: rgba(168, 85, 247, 0.09);
+    border: 1px solid rgba(168, 85, 247, 0.18);
+    color: #d4a1ff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.date-selection {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr 1.15fr;
+    gap: 13px;
+}
+
+.date-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.date-field select {
+    width: 100%;
+    min-height: 52px;
+    padding: 12px 13px;
+    border: 1px solid #2a2d3a;
+    border-radius: 13px;
+    outline: none;
+    background: #080a10;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    appearance: auto;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.date-field select:hover {
+    border-color: #484b5c;
+}
+
+.date-field select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.12);
+}
+
+.calculate-btn {
+    width: 100%;
+    min-height: 54px;
+    margin-top: 20px;
+    padding: 14px 20px;
+    border: 0;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 9px 28px rgba(124, 58, 237, 0.23);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 13px 34px rgba(124, 58, 237, 0.32);
+}
+
+.calculate-btn:active {
+    transform: translateY(0);
+}
+
+.arrow {
+    font-size: 21px;
+}
+
+.error-message {
+    min-height: 20px;
+    margin-top: 10px;
+    color: var(--danger);
+    font-size: 14px;
+    text-align: center;
+}
+
+.result-section {
+    max-width: 860px;
+    margin: 35px auto;
+    padding: clamp(22px, 4vw, 32px);
+    display: none;
+}
+
+.result-section.show {
+    display: block;
+    animation: resultIn 0.35s ease;
+}
+
+@keyframes resultIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-title {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.success-icon {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.11);
+    color: var(--success);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.result-title h2 {
+    font-size: 22px;
+}
+
+.result-title p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.age-display {
+    padding: 35px 10px;
+    text-align: center;
+}
+
+.age-number {
+    font-size: clamp(58px, 10vw, 92px);
+    line-height: 1;
+    font-weight: 900;
+    background: linear-gradient(135deg, #f0dcff, #a855f7, #e879f9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.age-label {
+    margin-top: 8px;
+    color: var(--muted);
+}
+
+.age-breakdown,
+.extra-stats,
+.info-section {
+    display: grid;
+    gap: 12px;
+}
+
+.age-breakdown {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.result-box,
+.stat {
+    background: #0a0c13;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.result-box {
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.result-box strong {
+    display: block;
+    font-size: 28px;
+}
+
+.result-box span,
+.stat span:last-child {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.birthday-card {
+    margin-top: 15px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(168, 85, 247, 0.14);
+    border-radius: 16px;
+    background: rgba(168, 85, 247, 0.065);
+}
+
+.birthday-icon {
+    padding: 10px;
+    border: 1px solid rgba(168, 85, 247, 0.20);
+    border-radius: 10px;
+    color: #d4a1ff;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.birthday-info span {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.birthday-info strong {
+    display: block;
+    font-size: 17px;
+}
+
+.birthday-info small {
+    color: #d4a1ff;
+}
+
+.extra-stats {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 15px;
+}
+
+.stat {
+    min-width: 0;
+    padding: 17px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stat-icon {
+    flex: 0 0 auto;
+    color: #d4a1ff !important;
+    font-size: 10px !important;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.stat strong {
+    display: block;
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.reset-btn {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 18px;
+    padding: 12px;
+    border: 1px solid #303444;
+    border-radius: 12px;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 14px;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.reset-btn:hover {
+    border-color: var(--accent);
+    color: #d4a1ff;
+    background: rgba(168, 85, 247, 0.04);
+}
+
+.info-section {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 55px 0;
+}
+
+.info-card {
+    padding: 23px;
+    background: rgba(16, 18, 28, 0.78);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.info-icon {
+    margin-bottom: 13px;
+    color: #d4a1ff;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.info-card h3 {
+    margin-bottom: 7px;
+    font-size: 17px;
+}
+
+.info-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.footer {
+    padding: 30px 15px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text);
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .nav-text {
+        display: none;
+    }
+
+    .hero-section {
+        padding-top: 52px;
+    }
+
+    .hero-section h1 {
+        letter-spacing: -1.5px;
+    }
+
+    .calculator-card,
+    .result-section {
+        border-radius: 20px;
+    }
+
+    .date-selection,
+    .info-section,
+    .extra-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        width: 94%;
+    }
+
+    .hero-section {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+    }
+
+    .card-header {
+        align-items: flex-start;
+    }
+
+    .calendar-icon {
+        width: 52px;
+        height: 52px;
+        flex-basis: 52px;
+    }
+
+    .age-breakdown {
+        gap: 8px;
+    }
+
+    .result-box {
+        padding: 15px 5px;
+    }
+
+    .result-box strong {
+        font-size: 23px;
+    }
+}
