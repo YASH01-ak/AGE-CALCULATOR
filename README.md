@@ -2,7 +2,7 @@
 
 > **A simple and user-friendly age calculator website to calculate age quickly and accurately.**
 
-🌐 **Live Website:** `https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/`
+🌐 **Live Website:** `https://yash01-ak.github.io/AGE-CALCULATOR/`
 
 ---
 
